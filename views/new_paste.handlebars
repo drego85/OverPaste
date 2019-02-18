@@ -1,0 +1,27 @@
+{{#each errori}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Fill the fields</div>
+            <div class="panel-body">
+                <form action="/" method="post" role="form" class="form-group">
+                    <div class="form-group">
+					    <label for="title">Paste Name</label>
+					    <input type="text" class="form-control" name="title" required>
+                    </div>
+                    <div class="form-group">
+					    <label for="pastetext">Contenuto</label>
+					    <textarea class="form-control" name="pastetext" rows="10" required></textarea>
+                    </div>
+                    <p><button type="submit" class="btn btn-primary">Create New Paste</button></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

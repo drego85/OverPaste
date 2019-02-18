@@ -1,0 +1,33 @@
+{
+  "name": "overpaste",
+  "version": "1.0.0",
+  "description": "Project for the university of an alternative to PasteBin",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drego85/OverPaste.git"
+  },
+  "keywords": [
+    "paste",
+    "pastebin"
+  ],
+  "author": "Andrea Draghetti",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "handlebars": "^4.1.0",
+    "handlebars-helpers": "^0.10.0",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.4.13"
+  }
+  "bugs": {
+    "url": "https://github.com/drego85/OverPaste/issues"
+  },
+  "homepage": "https://github.com/drego85/OverPaste#readme"
+}

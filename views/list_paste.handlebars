@@ -1,0 +1,44 @@
+<div class="row">
+        <div class="col-md-12">
+        <div class="panel panel-default collapsed">
+            <div class="panel-heading">
+                Paste List
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover" data-page-size="12" data-filter=#filter>
+	                <thead>
+	                <tr>
+	                    <th>Date Time</th>
+	                    <th>Title</th>
+	                    <th>Preview</th>
+	                    <th>View</th>
+	                </tr>
+	                </thead>
+	                <tbody>
+	                
+					{{#each note}}
+              
+                   	<tr>
+	                    <td>{{moment data format="YYYY-MM-DD HH:mm"}}</td>
+	                    <td>{{title}}</td>
+	                    <td>{{ellipsis pastetext 50}}</td>
+	                    <td class="center"><a href="/view_paste/{{id}}"><button type="button" class="btn btn-default"><em class="fa fa-search"></em></button></a></td>
+                   	</tr>
+
+                                				
+					{{/each}}
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <ul class="pagination pull-right"></ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+             </div>
+        </div>
+    </div>
+</div>
