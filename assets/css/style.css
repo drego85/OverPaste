@@ -229,10 +229,11 @@ Panels css
 Buttons style
 */
 
-.btn-default {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+.btn-primary {
+  margin:5px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 /*
@@ -407,4 +408,6 @@ Footer
   width: 100%;
   background-color: #101823;
 }
+
+
 
