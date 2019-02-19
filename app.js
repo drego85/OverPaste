@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost/overpaste", {useNewUrlParser: true}, funct
 
 // Mongoose Model and Schema
 require("./models/overpaste");
-const Note = mongoose.model("Note");
+const Notes = mongoose.model("Notes");
 
 // Handlebars
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
@@ -46,34 +46,37 @@ app.use(session({
 
 
 // Route for Homepage
-app.get("/" , (req , res)=>{
+app.get("/", function(req, res, next){
+	console.log("Request URL:", req.originalUrl);
 	let headerTitle = "New Paste";
     res.render("new_paste", {headerTitle: headerTitle});
 });
 
 
 // Route for Paste List
-app.get("/list_paste" , (req , res) =>{
+app.get("/list_paste", function(req, res, next){
+	console.log("Request URL:", req.originalUrl);
 	let headerTitle = "Paste List";
-	Note.find({})
+	Notes.find({})
 	.sort({datetime: "desc"})
-	.then(note => {
+	.then(paste => {
 	    res.render("list_paste" , {
-	        note: note,
+	        paste: paste,
 	        headerTitle: headerTitle
 	    });
 	});
 });
 
 // Route for Paste Views
-app.get("/view_paste/:id" , (req , res) =>{
+app.get("/view_paste/:id", function(req, res, next){
+	console.log("Request URL:", req.originalUrl);
 	let headerTitle = "Paste View";
-    Note.findOne({
+    Notes.findOne({
         _id: req.params.id
     })
-    .then(nota =>{
+    .then(paste =>{
         res.render("view_paste" , {
-			nota: nota,
+			paste: paste,
 			headerTitle: headerTitle
        	});
     });
@@ -81,12 +84,12 @@ app.get("/view_paste/:id" , (req , res) =>{
 
 
 // Route to save New Paste
-app.post("/", (req, res) => {
-    const nuovaNota = {
+app.post("/", function(req, res, next){
+    const newPaste = {
 		title: req.body.title,
         pastetext: req.body.pastetext
     }
-    new Note(nuovaNota)
+    new Notes(newPaste)
     .save()
     .then(nota =>{
         res.redirect("/list_paste");
@@ -94,9 +97,9 @@ app.post("/", (req, res) => {
 });
 
 
-// Route for Paste Delete --- DA IMPLEMENTARE ---
-app.delete("/list_paste/:id" , (req , res) =>{
-    Note.remove({
+// Route for Paste Delete
+app.get("/delete_paste/:id", function(req, res, next){
+    Notes.remove({
         _id: req.params.id
     })
     .then(nota =>{
