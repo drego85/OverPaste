@@ -71,7 +71,7 @@ app.get("/view_paste/:id" , (req , res) =>{
     Paste.findOne({
         _id: req.params.id
     })
-    .then(nota =>{
+    .then(paste =>{
         res.render("view_paste" , {
 			paste: paste,
 			headerTitle: headerTitle
