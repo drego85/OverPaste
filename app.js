@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost/overpaste", {useNewUrlParser: true}, funct
 
 // Mongoose Model and Schema
 require("./models/overpaste");
-const Note = mongoose.model("Note");
+const Paste = mongoose.model("Paste");
 
 // Handlebars
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
@@ -55,11 +55,11 @@ app.get("/" , (req , res)=>{
 // Route for Paste List
 app.get("/list_paste" , (req , res) =>{
 	let headerTitle = "Paste List";
-	Note.find({})
+	Paste.find({})
 	.sort({datetime: "desc"})
-	.then(note => {
+	.then(paste => {
 	    res.render("list_paste" , {
-	        note: note,
+	        paste: paste,
 	        headerTitle: headerTitle
 	    });
 	});
@@ -68,12 +68,12 @@ app.get("/list_paste" , (req , res) =>{
 // Route for Paste Views
 app.get("/view_paste/:id" , (req , res) =>{
 	let headerTitle = "Paste View";
-    Note.findOne({
+    Paste.findOne({
         _id: req.params.id
     })
     .then(nota =>{
         res.render("view_paste" , {
-			nota: nota,
+			paste: paste,
 			headerTitle: headerTitle
        	});
     });
@@ -82,11 +82,11 @@ app.get("/view_paste/:id" , (req , res) =>{
 
 // Route to save New Paste
 app.post("/", (req, res) => {
-    const nuovaNota = {
+    const newPaste = {
 		title: req.body.title,
         pastetext: req.body.pastetext
     }
-    new Note(nuovaNota)
+    new Paste(newPaste)
     .save()
     .then(nota =>{
         res.redirect("/list_paste");
@@ -96,7 +96,7 @@ app.post("/", (req, res) => {
 
 // Route for Paste Delete 
 app.get("/delete_paste/:id" , (req , res) =>{
-    Note.remove({
+    Paste.remove({
         _id: req.params.id
     })
     .then(nota =>{
