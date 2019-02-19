@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const pasteSchema = mongoose.Schema({
+const noteSchema = mongoose.Schema({
 	title:{
 	    type: String,
 	    required: true
@@ -15,4 +15,4 @@ const pasteSchema = mongoose.Schema({
 	}
 });
 
-mongoose.model("Notes" , pasteSchema);
+mongoose.model("Note" , noteSchema);
