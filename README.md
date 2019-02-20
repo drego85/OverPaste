@@ -2,7 +2,7 @@
 Paste your every idea!
 
 ## Introduction
-Over Paste is a simple project developed for the "Tecnologie e Linguaggi per il Web" course of "[Sicurezza dei Sistemi e delle Reti Informatiche](http://www.cosp.unimi.it/offerta_didattica/F68.htm)".
+Over Paste is a simple project developed for the "Tecnologie e Linguaggi per il Web" course of "[Sicurezza dei Sistemi e delle Reti Informatiche](http://www.cosp.unimi.it/offerta_didattica/F68.htm)" at the "Università degli Studi di Milano".
 
 Over Paste was born following the successful model of [pastebin.com](https://pastebin.com), a website used to share portions of source code.
 
