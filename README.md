@@ -6,7 +6,7 @@ Over Paste is a simple project developed for the "Tecnologie e Linguaggi per il 
 
 Over Paste was born following the successful model of [pastebin.com](https://pastebin.com), a website used to share portions of source code.
 
-The application was developed with the technologies illustrated during the course: [Node.js](https://nodejs.org/it/) for the server application, HTML5, CSS3 and Javascript for the client.  
+The application was developed with the technologies illustrated during the course: [Node.js](https://nodejs.org) for the server application, HTML5, CSS3 and Javascript for the client.  
 
 ### Requirements
 
