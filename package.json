@@ -21,7 +21,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
-    "handlebars": "^4.1.0",
+    "handlebars": "^4.1.2",
     "handlebars-helpers": "^0.10.0",
     "method-override": "^2.3.10",
     "mongoose": "^5.4.13"
